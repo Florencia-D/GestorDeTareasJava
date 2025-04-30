@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 public class GestorDeTareas {
 public static void main(String[] args) {
 ArrayList<String> tareas = new ArrayList<>();
@@ -16,12 +17,16 @@ sc.nextLine();
 opcion = 0;
 }
 switch (opcion) {
-case 1:
-System.out.println("Escribe la tarea:");
-sc.nextLine();
-String tarea = sc.nextLine();
-tareas.add(tarea);
-break;
+    case 1:
+    System.out.println("Escribe la tarea:");
+    sc.nextLine();
+    String tarea = sc.nextLine();
+    if (!tarea.trim().isEmpty()) {
+    tareas.add(tarea);
+    } else {
+    System.out.println("La tarea no puede estar vacía");
+    }
+    break;
 case 2:
 System.out.println("Tareas: " + tareas);
 break;
